@@ -1,10 +1,12 @@
 {
   "name": "eslint-plugin-cssx",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ESLint plugin for CSSX",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --colors ./test/*.spec.js",
+    "test-watch": "mocha -w --colors ./test/*.spec.js --watch-extensions js,jsx,cssx",
+    "lint": "eslint test/**/*.*"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,14 @@
   "bugs": {
     "url": "https://github.com/krasimir/eslint-plugin-cssx/issues"
   },
-  "homepage": "https://github.com/krasimir/eslint-plugin-cssx#readme"
+  "homepage": "https://github.com/krasimir/eslint-plugin-cssx#readme",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "eslint": "2.12.0",
+    "eslint-plugin-react": "5.1.1",
+    "mocha": "2.5.3"
+  },
+  "dependencies": {
+    "cssx-transpiler": "5.2.0"
+  }
 }

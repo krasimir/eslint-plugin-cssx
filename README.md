@@ -1,0 +1,1 @@
+# ESLint plugin for CSSX
