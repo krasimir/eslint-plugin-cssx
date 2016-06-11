@@ -1,0 +1,23 @@
+{
+  "name": "eslint-plugin-cssx",
+  "version": "0.1.0",
+  "description": "ESLint plugin for CSSX",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krasimir/eslint-plugin-cssx.git"
+  },
+  "keywords": [
+    "eslintplugin",
+    "cssx"
+  ],
+  "author": "Krasimir Tsonev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krasimir/eslint-plugin-cssx/issues"
+  },
+  "homepage": "https://github.com/krasimir/eslint-plugin-cssx#readme"
+}
