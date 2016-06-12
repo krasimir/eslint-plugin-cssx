@@ -1,5 +1,3 @@
-var CSSXTranspiler = require('cssx-transpiler');
-
 var generateReplacement = function (lines) {
   var str = '{', i = 1;
 
