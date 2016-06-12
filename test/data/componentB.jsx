@@ -10,6 +10,9 @@ class Component extends React.Component {
     }
   }
   render() {
+    var s = <style>{
+      margin: 10px;
+    }</style>;
     return (
       <CSSX styles={ this.css() }>
         <h1>Title styled with <i>CSSX</i></h1>

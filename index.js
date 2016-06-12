@@ -1,11 +1,25 @@
 var CSSXTranspiler = require('cssx-transpiler');
 
+var generateReplacement = function (lines) {
+  var str = '{', i = 1;
+
+  for (;i < lines; i++) str += '\n';
+  return str += '}';
+}
+
 var Plugin = {
   preprocess: function(text) {
-    return [ CSSXTranspiler(text, { minified: false }) ];
+    var re = /<style>([\s\S]*?)<\/style>/g;
+    var cleaned = text, match;
+
+    while(match = re.exec(text)) {
+      cleaned = cleaned.replace(match[0], generateReplacement(match[0].split(/\n/g).length));
+    }
+
+    return [ cleaned ];
   },
-  postprocess: function(messages) {
-    return messages;
+  postprocess: function (messages, filename) {
+    return messages[0];
   }
 };
 

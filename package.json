@@ -1,12 +1,11 @@
 {
   "name": "eslint-plugin-cssx",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "ESLint plugin for CSSX",
   "main": "index.js",
   "scripts": {
     "test": "mocha --colors ./test/*.spec.js",
-    "test-watch": "mocha -w --colors ./test/*.spec.js --watch-extensions js,jsx,cssx",
-    "lint": "eslint test/**/*.*"
+    "test-watch": "mocha -w --colors ./test/*.spec.js --watch-extensions js,jsx,cssx"
   },
   "repository": {
     "type": "git",
