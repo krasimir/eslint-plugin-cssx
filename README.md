@@ -4,7 +4,7 @@ Install the plugin with `npm i eslint-plugin-cssx` and add it to your `.eslintrc
 
 ```json
 "plugins": [
-  "eslint-plugin-react"
+  "eslint-plugin-cssx"
 ]
 ```
 
