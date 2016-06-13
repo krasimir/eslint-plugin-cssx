@@ -1,9 +1,11 @@
+// retain all original lines for numbering, but disable eslint so as to not trigger rules such as no-multiple-empty-lines and others
 var generateReplacement = function (lines) {
-  var str = '{', i = 1;
+  var str = '{/* eslint-disable */ ', i = 1;
 
   for (;i < lines; i++) str += '\n';
-  return str += '}';
+  return str += '}/* eslint-enable */';
 }
+
 
 var Plugin = {
   preprocess: function(text) {
