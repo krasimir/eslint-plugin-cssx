@@ -6,22 +6,23 @@ var CSSXPlugin = require('../');
 
 var expect = chai.expect;
 var linter = new CLIEngine({
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
+  'parserOptions': {
+    'ecmaVersion': 6,
+    'sourceType': 'module',
+    'ecmaFeatures': {
+      'jsx': true
     }
   },
-  "env": {
-    "browser": true,
-    "node": true
+  'env': {
+    'browser': true,
+    'node': true
   },
-  "rules": {
-    "jsx-quotes": [2, "prefer-single"]
+  'rules': {
+    'jsx-quotes': [2, 'prefer-single'],
+    'no-multiple-empty-lines': 'error'
   },
-  "plugins": [
-    "eslint-plugin-react"
+  'plugins': [
+    'eslint-plugin-react'
   ]
 });
 var cases = [
@@ -50,7 +51,7 @@ var cases = [
   }
 ];
 
-linter.addPlugin("eslint-plugin-cssx", CSSXPlugin);
+linter.addPlugin('eslint-plugin-cssx', CSSXPlugin);
 
 describe('Given the eslint-plugin-cssx', function () {
   cases.forEach(function (testCase) {
