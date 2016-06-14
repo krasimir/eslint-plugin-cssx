@@ -53,6 +53,13 @@ var cases = [
 
 linter.addPlugin('eslint-plugin-cssx', CSSXPlugin);
 
+it('should give newline result', function () {
+  var text = fs.readFileSync(__dirname + '/data/sample.jsx').toString('utf8')
+  expect(text).to.be.ok
+  var result = CSSXPlugin.processors['.jsx'].preprocess(text)
+  expect(result[0]).to.equal('const styles = (/* eslint-disable */{\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n}/* eslint-enable */)\n\nlet x = 1;\n\nconst styles2 = (/* eslint-disable */{\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n}/* eslint-enable */)')
+});
+
 describe('Given the eslint-plugin-cssx', function () {
   cases.forEach(function (testCase) {
     if (testCase.skip) return;
