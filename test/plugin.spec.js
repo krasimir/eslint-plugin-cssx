@@ -20,10 +20,7 @@ var linter = new CLIEngine({
   'rules': {
     'jsx-quotes': [2, 'prefer-single'],
     'no-multiple-empty-lines': 'error'
-  },
-  'plugins': [
-    'eslint-plugin-react'
-  ]
+  }
 });
 var cases = [
   {
@@ -33,14 +30,14 @@ var cases = [
       expect(result.errorCount).to.be.equal(0);
     }
   },
-  { 
+  {
     skip: false,
     file: __dirname + '/data/componentB.jsx',
     expectation: function (result) {
       expect(result.errorCount).to.be.equal(0);
     }
   },
-  { 
+  {
     skip: false,
     file: __dirname + '/data/componentC.jsx',
     expectation: function (result) {
@@ -48,9 +45,17 @@ var cases = [
       expect(result.results[0].messages[0].message).to.be.equal('Unexpected usage of doublequote.');
       expect(result.results[0].messages[0].line).to.be.equal(35);
     }
+  },
+  {
+    skip: false,
+    file: __dirname + '/data/jss.jsx',
+    expectation: function (result) {
+      expect(result.errorCount).to.be.equal(0);
+    }
   }
 ];
 
+linter.addPlugin('eslint-plugin-react', '../node_modules/eslint-plugin-react');
 linter.addPlugin('eslint-plugin-cssx', CSSXPlugin);
 
 it('should give newline result', function () {
